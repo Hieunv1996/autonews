@@ -1,11 +1,12 @@
 import feedparser
 import json
+import re
 from news import News
 import traceback
 from tuoitre import Tuoitre
 from dantri import Dantri
 from vnexpress import VNExpress
-
+from dateutil import parser
 
 def call_crawler(url, log):
     news = None
@@ -35,7 +36,6 @@ def call_crawler(url, log):
             news.set_site('dantri.com.vn')
     return news
 
-
 def parse_rss_url(rss_urls, crawled, log):
     datas = []
     links = {}
@@ -47,7 +47,7 @@ def parse_rss_url(rss_urls, crawled, log):
                     url = item['link']
                     links[url] = True
                     if url not in crawled:
-                        create_date = item['published']
+                        create_date = parser.parse(item['published']).strftime('%Y-%m-%d %H:%M:%S')
                         news = call_crawler(url, log)
                         if news:
                             news.set_create_date(create_date)

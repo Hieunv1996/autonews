@@ -1,0 +1,33 @@
+﻿div.news {
+    margin: 0px auto;
+}
+
+h2.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+h3.sapo {
+    font-weight: 300;
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+a.url-title {
+    text-decoration: none;
+    color: #000;
+}
+
+a.url-title:hover {
+    color: #0085a1;
+}
+
+a.pagging {
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 20px;
+}
